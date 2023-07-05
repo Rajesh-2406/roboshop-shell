@@ -1,10 +1,17 @@
+source common.sh
 
-echo -e "\e[31mcopy mongoDB Repo file \e[0m"
+echo -e "${color}Copy mongoDB Repo file ${nocolor}"
 cp mongodb.repo /etc/yum.repos.d/mongodb.repo &>>/tmp/roboshop.log
-echo -e "\e[31minstalling mongodb server \e[0m"
+stat_check $?
+
+
+echo -e "${color}installing mongodb server ${nocolor}"
 yum install mongodb-org -y &>>/tmp/roboshop.log
+stat_check $?
+
 # modify the config file
-echo -e "\e[31mstart mongodb service \e[0"
+echo -e "${color}Start mongodb service ${nocolor}"
 
 systemctl enable mongod &>>/tmp/roboshop.log
 systemctl restart mongod &>>/tmp/roboshop.log
+stat_check $?
