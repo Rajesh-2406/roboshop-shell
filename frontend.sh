@@ -17,7 +17,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip &>>/tmp/roboshop.log
 stat_check $?
 
-echo -e "${color} Update Frontend Configuration ${nocolor}
+echo -e "${color} Update Frontend Configuration ${nocolor}"
 cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>.tmp/roboshop.log
 stat_check $?
 
