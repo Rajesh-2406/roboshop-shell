@@ -11,7 +11,6 @@ stat_check $?
 
 # modify the config file
 echo -e "${color}Start mongodb service ${nocolor}"
-
 systemctl enable mongod &>>/tmp/roboshop.log
 systemctl restart mongod &>>/tmp/roboshop.log
 stat_check $?
