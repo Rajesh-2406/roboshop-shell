@@ -57,7 +57,7 @@ syatem_setup(){
 
 nodejs() {
 
-  echo -e "${color}Configuring Nodejs Repos${nocolor]}"
+  echo -e "${color} Configuring Nodejs Repos ${nocolor}"
   curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$log_file
   stat_check $?
 
