@@ -1,4 +1,4 @@
- source coomon.sh
+ source common.sh
 
 
 echo -e "${color}Disable Mysql Default Version ${nocolor}"
