@@ -18,7 +18,7 @@ stat_check(){
 }
 
 app_presetup(){
-  echo _e "${color} Add Application User${nocolor}"
+  echo -e "${color} Add Application User${nocolor}"
   id roboshop &>>log_file
   if [ $? -eq 1 ]; then
     useradd roboshop &>>$log_file
