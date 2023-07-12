@@ -12,7 +12,7 @@ echo -e "${color} Install Redis ${nocolor}"
 yum install redis -y &>>/tmp/roboshop.log
 stat_check $?
 
-echo -e "${color} Update Redis Listen address #{nocolor}"
+echo -e "${color} Update Redis Listen address ${nocolor}"
 send -i 's/127.0.0.1/0.0.0.0/' /etc/redis.conf /etc/redis/redis.conf &>>/tmp/roboshop.log
 stat_check $?
 
