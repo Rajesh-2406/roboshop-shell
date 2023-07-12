@@ -31,18 +31,18 @@ npm install &>>log_file
 stat_check $?
 
 echo -e "${color}Setup SystemD Service ${nocolor}"
-cp user.service /etc/systemd/system/user.service
+cp user.service /etc/systemd/system/user.service &>>log_file
 
 echo -e "${color} Start User Service ${nocolor}"
-systemctl daemon-reload
-systemctl enable user
-systemctl restart user
+systemctl daemon-reload &>>log_file
+systemctl enable user &>>log_file
+systemctl restart user &>>log_file
 
 echo -e "\e[ Copy mongoDB Repo file \e[${nocolor}"
-cp mongodb.repo /etc/yum.repos.d/mongodb.repo
+cp mongodb.repo /etc/yum.repos.d/mongodb.repo &>>log_file
 
 echo -e "\e[ Install MOngoDB Client \3[${nocolor}"
-yum install mongodb-org-shell -y
+yum install mongodb-org-shell -y &>>log_file
 
 echo -e "\e[ Load Schema \e[${nocolor}"
-mongo --host mongodb.devops2406.store </app/schema/user.js
+mongo --host mongodb.devops2406.store </app/schema/user.js &>>log_file
