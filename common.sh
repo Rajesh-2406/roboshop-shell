@@ -56,7 +56,8 @@ syatem_setup(){
 }
 
 nodejs() {
-  cho -e "${color}Configuring Nodejs Repos${nocolor]}"
+
+  echo -e "${color}Configuring Nodejs Repos${nocolor]}"
   curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$log_file
   stat_check $?
 
@@ -73,7 +74,7 @@ nodejs() {
 }
 
 mongo_schema_setup() {
-  echo -e "${color} Copy mongodb REpo file ${nocolor}"
+  echo -e "${color} Copy mongodb Repo file ${nocolor}"
   cp /home/centos/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongodb &>>$log_file
   stat_check $?
 
