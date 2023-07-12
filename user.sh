@@ -8,7 +8,7 @@ yum install nodejs -y &>>log_file
 stat_check $?
 
 echo -e " ${color}Add Application User ${nocolor}"
-useradd  &>>log_file
+useradd roboshop &>>log_file
 stat_check $?
 
 echo -e "${color} Create Application Diretectory ${nocolor}"
