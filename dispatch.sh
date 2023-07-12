@@ -16,11 +16,11 @@ unzip /tmp/dispatch.zip  &>>log_file
 
 echo -e "${color} Download the Application Dependencies ${nocolor}"
 cd /app
-go mod init dispatch
+go mod init dispatch  &>>log_file
 
 echo -e "${color} Build the Software ${nocolor}"
-go get
-go build
+go get  &>>log_file
+go build  &>>log_file
 
 echo -e "${color} Start the dispatch Service ${nocolor}"
 systemctl daemon-reload  &>>log_file
