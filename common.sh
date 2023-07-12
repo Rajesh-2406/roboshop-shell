@@ -67,7 +67,7 @@ nodejs() {
   stat_check $?
 
   echo -e "${color} Install NodeJS Dependencies ${nocolor}"
-  npm install &>>$log_file
+  npm install  &>>$log_file
   stat_check $?
 
   system_setup
