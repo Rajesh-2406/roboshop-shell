@@ -12,7 +12,7 @@ echo -e "${color} Download the Application Content ${nocolor}"
 curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip  &>>log_file
 
 echo -e "${color} Extract the Application Content ${nocolor}"
-unzip /tmp/dispatch.zip
+unzip /tmp/dispatch.zip  &>>log_file
 
 echo -e "${color} Download the Application Dependencies ${nocolor}"
 cd /app
