@@ -1,28 +1,34 @@
 source common.sh
 echo -e "${color} Configuring Nodejs Repos${nocolor}"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>log_file
+stat_check $?
 
 echo -e "${color} Install Nodejs ${nocolor}"
 yum install nodejs -y &>>log_file
+stat_check $?
 
 echo -e " ${color}Add Application User ${nocolor}"
 useradd  &>>log_file
+stat_check $?
 
 echo -e "${color} Create Application Diretectory ${nocolor}"
 rm -rf /app &>>log_file
-mkdir /app
+mkdir /app &>>log_file
+stat_check $?
 
 echo -e "${color} Download Application Content ${nocolor}"
 curl -o //user.zip https://-artifacts.s3.amazonaws.com/user.zip &>>log_file
 cd /app
+stat_check $?
 
 echo -e "${color} Extract Application Content ${nocolor}"
 unzip //user.zip &>>log_file
 cd /app
+stat_check $?
 
 echo -e "${color} Install NodeJS Dependencies ${nocolor}"
 npm install &>>log_file
-
+stat_check $?
 
 echo -e "${color}Setup SystemD Service ${nocolor}"
 cp user.service /etc/systemd/system/user.service
