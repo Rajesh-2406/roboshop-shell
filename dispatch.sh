@@ -1,29 +1,30 @@
-echo -e "\e[33m Install GoLang \e[0m"
-yum install golang -y
+source common.sh
+echo -e "${color} Install GoLang ${nocolor}"
+yum install golang -y  &>>log_file
 
-echo -e "\e[33m Add Application User \e[0m"
-useradd roboshop
+echo -e "${color} Add Application User ${nocolor}"
+useradd roboshop  &>>log_file
 
-echo -e "\e[33m Setup the App directory\e[0m"
-mkdir /app
+echo -e "${color} Setup the App directory ${nocolor}"
+mkdir /app  &>>log_file
 
-echo -e "\e[33m Download the Application Content \e[0m"
-curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip
+echo -e "${color} Download the Application Content ${nocolor}"
+curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatch.zip  &>>log_file
 
-echo -e "\e[33m Extract the Application Content \e[0m"
+echo -e "${color} Extract the Application Content ${nocolor}"
 unzip /tmp/dispatch.zip
 
-echo -e "\e[33m Download the Application Dependencies\e[0m"
+echo -e "${color} Download the Application Dependencies ${nocolor}"
 cd /app
 go mod init dispatch
 
-echo -e "\e[33m Build the Software \e[0m"
+echo -e "${color} Build the Software ${nocolor}"
 go get
 go build
 
-echo -e "\e[33m Start the dispatch Service \e[0m"
-systemctl daemon-reload
-systemctl enable dispatch
-systemctl start dispatch
+echo -e "${color} Start the dispatch Service ${nocolor}"
+systemctl daemon-reload  &>>log_file
+systemctl enable dispatch  &>>log_file
+systemctl start dispatch  &>>log_file
 
 
