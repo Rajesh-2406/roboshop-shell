@@ -4,7 +4,7 @@ echo -e "${color} Configure Erlang repos ${nocolor}"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash &>>/tmp/roboshop.log
 stat_check $?
 
-echo -e "${color} Configure Rabbirmq Repos ${nocolor}"
+echo -e "${color} Configure Rabbitmq Repos ${nocolor}"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash &>>/tmp/roboshop.log
 stat_check $?
 
