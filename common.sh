@@ -106,14 +106,14 @@ mysql_schema_setup(){
 
 python() {
   echo -e "${color} Install Python ${nocolor}"
-  yum install python36 gcc python3-devel -y &>>/tmp/roboshop.log
+  yum install python36 gcc python3-devel -y &>>log_file
   stat_check $?
 
   app_presetup
 
   echo -e "${color} Install Application Dependencies ${nocolor}"
   cd /app
-  pip3.6 install -r requirements.txt &>>/tmp/roboshop.log
+  pip3.6 install -r requirements.txt &>>log_file
   stat_check $?
 
   systemd_setup
