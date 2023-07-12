@@ -66,7 +66,7 @@ nodejs() {
   yum install nodejs -y &>>$log_file
   stat_check $?
 
-  echo -e "${color}Install NodeJS Dependencies ${nocolor}"
+  echo -e "${color} Install NodeJS Dependencies ${nocolor}"
   npm install &>>$log_file
   stat_check $?
 
@@ -87,7 +87,7 @@ stat_check $?
 }
 
 mysql_schema_setup(){
-echo -e "${color} Install Maven ${nocolor}"
+  echo -e "${color} Install Maven ${nocolor}"
   yum install maven -y  &>>$log_file
   stat_check $?
 
@@ -104,8 +104,8 @@ echo -e "${color} Install Maven ${nocolor}"
 
 }
 
-pythom() {
-echo -e "${color} Install Python ${nocolor}"
+python() {
+  echo -e "${color} Install Python ${nocolor}"
   yum install python36 gcc python3-devel -y &>>/tmp/roboshop.log
   stat_check $?
 
