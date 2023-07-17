@@ -41,7 +41,7 @@ app_presetup(){
   stat_check $?
 }
 
-syatem_setup(){
+syatemd_setup(){
   echo -e "${color} Setup SystemD Service ${nocolor}"
   cp home/centos/roboshop-shell/$component.service /etc/systemd/system/$component.service  &>>$log_file
   sed -i -e "s/roboshop_app_password/$roboshop_app_password/"  /etc/systemd/system/$componnet.service
@@ -70,7 +70,7 @@ nodejs() {
   npm install  &>>$log_file
  # stat_check $?
 
-  system_setup
+  systemd_setup
 }
 
 mongo_schema_setup() {
