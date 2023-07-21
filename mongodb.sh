@@ -1,12 +1,12 @@
 source common.sh
 
 echo -e "${color}Copy mongoDB Repo file ${nocolor}"
-cp mongodb.repo /etc/yum.repos.d/mongodb.repo &>>/tmp/roboshop.log
+cp mongodb.yml.repo /etc/yum.repos.d/mongodb.yml.repo &>>/tmp/roboshop.log
 stat_check $?
 
 
 echo -e "${color}installing mongodb server ${nocolor}"
-yum install mongodb-org -y &>>/tmp/roboshop.log
+yum install mongodb.yml-org -y &>>/tmp/roboshop.log
 stat_check $?
 
 # modify the config file

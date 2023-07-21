@@ -75,14 +75,14 @@ nodejs() {
 
 mongo_schema_setup() {
   echo -e "${color} Copy mongodb Repo file ${nocolor}"
-  cp /home/centos/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongodb &>>$log_file
+  cp /home/centos/roboshop-shell/mongodb.yml.repo /etc/yum.repos.d/mongodb.yml &>>$log_file
   stat_check $?
 
   echo -e "${color} Install Mongodb Client ${nocolor}"
-  yum install mongodb-org-shell -y &>>$log_file
+  yum install mongodb.yml-org-shell -y &>>$log_file
   stat_check $?
   echo -e "${color} Load Schema ${nocolor}"
-  mongo --host mongodb-dev.devopsb73.xyz<${app_path}/schema/$component.js &>>$log_file
+  mongo --host mongodb.yml-dev.devopsb73.xyz<${app_path}/schema/$component.js &>>$log_file
 stat_check $?
 }
 
