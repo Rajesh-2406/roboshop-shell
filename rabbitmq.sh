@@ -5,7 +5,7 @@ curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.
 stat_check $?
 
 echo -e "${color} Configure Rabbitmq Repos ${nocolor}"
-curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | bash &>>/tmp/roboshop.log
+bbitmcurl -s https://packagecloud.io/install/repositories/rabbitmq/raq-server/script.rpm.sh | bash &>>/tmp/roboshop.log
 stat_check $?
 
 echo -e "${color} Install Rabbitmq Server${nocolor}"
