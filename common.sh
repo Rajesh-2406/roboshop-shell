@@ -82,7 +82,7 @@ mongo_schema_setup() {
   yum install mongodb.yml-org-shell -y &>>$log_file
   stat_check $?
   echo -e "${color} Load Schema ${nocolor}"
-  mongo --host mongodb.yml-dev.devopsb73.xyz<${app_path}/schema/$component.js &>>$log_file
+  mongo --host mongodb.yml-devops2406.xyz<${app_path}/schema/$component.js &>>$log_file
 stat_check $?
 }
 
